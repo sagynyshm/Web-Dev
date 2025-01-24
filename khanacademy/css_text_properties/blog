@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sagynysh's Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: rgb(102, 252, 28); 
+            
+        }
+
+        h1 {
+            background-color: rgb(0, 0, 0); 
+            color: rgb(255, 255, 255); 
+        
+            
+        }
+
+        h3 {
+            color: rgb(51, 51, 51); 
+            text-decoration:underlign;
+        }
+
+        ul {
+            list-style-type: none;
+            
+        }
+
+        
+
+        a {
+            text-decoration: underline;
+            color: rgb(51, 51, 51); 
+        }
+
+        a:hover {
+            color: rgb(0, 123, 255); 
+        }
+
+        h2 {
+            color: rgb(51, 51, 51); 
+        }
+
+        p {
+            color: rgb(85, 85, 85); 
+        }
+
+        h6 {
+            color: rgb(119, 119, 119); 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sagynysh's Blog</h1>
+
+    <h3>Contents</h3>
+    <ul>
+        <li><a href="#entry1">Diving in web-dev world!</a></li>
+        <li><a href="#entry2">My first experience with HTML and CSS</a></li>
+    </ul>
+
+   
+    <h2 id="entry1">Diving in web-dev world!</h2>
+    <h6>Posted on 24 of January 2025</h6>
+    <p>I started to learn Web Development in KBTU spring semester'25. I have my first lab work which includes learning online lectures on platforms and doing practice tasks.</p>
+
+
+    <h2 id="entry2">My first experience with HTML and CSS</h2>
+    <h6>Posted on 26 of January 2025</h6>
+    <p>After diving into web development, I started to experiment with HTML and CSS. I learned basic structure and styling using resources like <a href="https://www.khanacademy.org/computing/computer-programming/html-css" target="_blank">Khan Academy</a>, <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a>, and <a href="https://www.udacity.com/course/intro-to-html-and-css--ud001" target="_blank">Udacity</a>.</p>
+
+</body>
+</html>
