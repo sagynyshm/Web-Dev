@@ -26,6 +26,11 @@ ul{
     margin-left:350px;
     margin-top:75px;
 }
+li span:hover {
+    text-decoration: underline;
+}
+
+
 li{
     
     font-size: 12px;
@@ -59,6 +64,7 @@ li{
     margin-top:5px;
     width: 980px;
 }
+
 .base{
     display:flex;
     margin-left: 350px;
