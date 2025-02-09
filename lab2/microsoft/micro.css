@@ -1,251 +1,168 @@
 body{
-    background-color: rgb(255, 255, 255);
-    font-family: Segoe UI,Arial,Calibri;
+    font-family: 'Segoe UI', SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
 }
-.menu{
-    position: absolute;
-    left: 0px; 
-    top: 0px; 
-    background-color: #fff;
-    width: 100%;
-    height: 54px;
-}
-#logo-microsoft{
-    padding-top: 14px;
-    padding-left: 84px; 
-    width: 107px;
-    height: auto;
-}
-#menu-left-bar{
-    width: 660px;
-    height: 50px;
-    position: absolute;
-    top : 15px ;
-    left: 210px ;
-}
-#menu-left-bar a{
-    margin-left: 16px ; 
-    font-size: 13px ;
+
+a{
     text-decoration: none;
-    color : black ;  
+    color: #262626;
+    font-size: 13px;
+    padding: 2vh 1vh;
+    border: 1px dashed #fff;
 }
-#menu-left-bar a:hover{
+a:hover{
     text-decoration: underline;
-} 
-#menu-right-bar {
-    width : 300px; 
-    height : 50px ;
-    font-size: 15px; 
-    position: absolute;
-    right : 150px;
-    top : 15px;   
+    text-decoration-thickness: 2px;
+}
+a:active{
+    border: 1px dashed #262626;
+}
+h1{
+    margin: 0;
 }
 
-#select-in-menu{
-    border: 0px ;
+header{
+    padding: 1px 5vw;
+    display: flex;
+    justify-content: space-between;
 }
-#menu-right-bar a{
-    padding-left: 10px;
+header a{
+    height: 3vh;
+}
+#main_part{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+
+}
+#logo_link{
+    padding: 2vh;
+    margin-bottom:10px;
+
+}
+#logo_link:active{
+    border: 1px dashed #262626;
+}
+#logo_link img{
+    height: 3vh;
+}
+#service_part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#service_part div{
+    display: flex;
+    align-items: center;
 }
 #cart{
-    padding-left: 20px;
+    display: flex;
+    align-items: center;
 }
-#search{
-    width: auto;
-    height: 18px;
-    position: relative;
-    top : 5px ;
-    left : 4px ;
-    padding-right: 10px;
+#cart_img{
+    height: 2vh;
+    width: 2vh;
 }
-#cart{
-    width: auto;
-    height: 16px;
-    padding-left: 12px;
-    position: relative;
-    top : 2px; 
-    padding-right: 8px;
+#login:hover{
+    border: 1px dashed #262626;
 }
-#sign-in {
-    position: relative;
-    top : -25px; 
-    left : 310px; 
-    height: 32px;
-    width: auto;
+#login a:hover{
+    border: none;
 }
-#first-floor{
-    background-color: rgba(224, 100, 125,.2);
-    position: absolute;
-    top : 55px ; 
-    width: 100%;
-    left : 0px;  
-    height : 350px; 
-    text-align: center;
-}
-#first-floor #new-surface {
-    font-size: 50px;
-    font-weight: 600;
-    padding-left: 0%;
-    position: relative;
-    top : 40px; 
-    text-align: center;
-}
-#first-floor #intro{
-    font-size: 16px;
-    padding-top: 40px;
-}
-#first-floor button {
-    height: 40px;
-    width: 220px;
-    border: 0px;
-    background-color: black;
-    cursor: pointer;
+#login_img{
+    height: 3vh;
 }
 
-#button-1{
-    color : white;
-    position: relative; 
-    left : -20px; 
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 5px;
+.slider{
+    background-image: url(https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Surface-Pro-AI-11Ed-Sapphire-MC001-3000x1682:VP5-1920x600);
+    background-size: cover;
+    padding: 10vh 56vw 20vh 5vw;
 }
-#button-2{
-    color : white;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 5px;
-    width: 220;
-}
-.main{
-    position: absolute;
-    top : 400px; 
-    left : 0px; 
-    width: 100%;
-    height: auto;
-}
-.second-floor{
-    position: absolute;
-    height: 520px;
-    width: 100%;
-    top : 936px;
-    left: 0px;
-    background-color: rgba(224, 100, 125,.2);
-}
-#first-card{
-    position: relative;
-    top : 20px; 
-    left: 100px;
+.slider div{
     background-color: white;
-    height: 460px;
-    width: 404px;
+    padding: 6.5vh;
 }
-#first-card img {
-    width: 404px;
-    height: auto;
-}
-#first-card #compare{
-    position: relative;
-    left : 10px; 
-    font-size: 30px;
-    text-align: left;
+.slider div h1{
     font-weight: 600;
+    font-size: 37px;
 }
-#first-card #best-in{
-    position: relative;
-    top : 5px;
-    left: 10px;
-    text-align: left;
-    padding-top: 5px;
+.shop{
+    border: none;
+    background-color: #0067b8;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0.3vh;
 }
-#first-card button{
-    background-color: #0067B8;
-    color : white; 
-    position: absolute;
-    top : 400px;
-    width: 150px;
-    height: 37px; 
-    left : 20px;
-    border: 0px;
-    font-size: 16px;
-    font-weight: 600px;
-    border-radius: 3px;
+.shop a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 550;
+    font-family: 'Segoe UI', SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: none;
 }
-#second-card{
-    position: relative;
-    top : -440px; 
-    left: 530px;
-    background-color: white;
-    height: 460px;
-    width: 404px;
+.shop a:hover{
+    text-decoration: none;
 }
-#second-card img {
-    width: 404px;
-    height: auto;
+.shop div{
+    background-color: #0067b8;
+    padding: 1vh;
+    border: 3px dotted #0067b8;
 }
-#second-card #keyboard{
-    position: relative;
-    left : 10px; 
-    font-size: 30px;
-    text-align: left;
+.shop:hover{
+    background-color: #004a7f;
+}
+.shop div:hover{
+    background-color: #004a7f;
+    border-color: #004a7f;
+}
+.shop div:active{
+    text-decoration: none;
+    border-color: #fff;
+}
+
+#shopping{
+    display: flex;
+    justify-content: space-around;
+    margin: 7vh 10vh;
+}
+#shopping div{
+    display: flex;
+    flex-direction: column;
+}
+#shopping div img{
+    height: 5vh;
+}
+.a_shopping{
+    color: #0067b8;
+    text-decoration: 2px underline #0067b8;
     font-weight: 600;
+    border: 3px dotted #fff;
+    padding: 0;
+    font-size: 15px;
 }
-#second-card #shop{
-    position: relative;
-    top : 15px;
-    left: 10px;
-    text-align: left;
-    padding-top: 25px;
+.a_shopping:hover{
+    text-decoration: 2px underline #0067b8;
 }
-#second-card button{
-    background-color: #0067B8;
-    color : white; 
-    position: absolute;
-    top : 400px;
-    width: 100px;
-    height: 37px; 
-    left : 20px;
-    border: 0px;
-    font-size: 16px;
-    font-weight: 600px;
-    border-radius: 3px;
+.a_shopping:active{
+    border: 3px dotted #0067b8;
 }
-#third-card{
-    position: relative;
-    top : -900px; 
-    left: 960px;
-    background-color: white;
-    height: 460px;
-    width: 404px;
+
+#news{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5vw;
 }
-#third-card img{
-    width: 404px;
-    height: auto;
+.news_div{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 21vw;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .13);
+    padding-bottom: 2vh;
 }
-#third-card #m365c{
-    position: relative;
-    left : 10px; 
-    font-size: 30px;
-    text-align: left;
-    font-weight: 600;
-}
-#third-card #save-time{
-    position: relative;
-    top : 15px;
-    left: 10px;
-    text-align: left;
-    padding-top: 15px;
-}
-#third-card button{
-    background-color: #0067B8;
-    color : white; 
-    position: absolute;
-    top : 400px;
-    width: 100px;
-    height: 37px; 
-    left : 20px;
-    border: 0px;
-    font-size: 16px;
-    font-weight: 600px;
-    border-radius: 3px;
+.news_div img{
+    width: 21vw;
 }
