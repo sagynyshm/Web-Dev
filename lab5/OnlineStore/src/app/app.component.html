@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <h2>Categories</h2>
+  <div class="categories">
+    <button *ngFor="let category of categories" (click)="selectCategory(category)">
+      {{ category.name }}
+    </button>
+  </div>
+
+  <!-- Если выбрана категория, показываем ее продукты -->
+  <div *ngIf="selectedCategory">
+    <h2>Products in {{ selectedCategory.name }}</h2>
+    <app-product-list
+      [products]="selectedCategory.products"
+      (removeProduct)="onRemoveProduct($event)">
+    </app-product-list>
+  </div>
+</div>
+

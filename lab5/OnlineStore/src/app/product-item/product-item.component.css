@@ -1,0 +1,24 @@
+.product-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+  }
+  
+  .buttons button,
+  .buttons a {
+    margin: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
