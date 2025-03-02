@@ -7,7 +7,6 @@
     </button>
   </div>
 
-  <!-- Если выбрана категория, показываем ее продукты -->
   <div *ngIf="selectedCategory">
     <h2>Products in {{ selectedCategory.name }}</h2>
     <app-product-list

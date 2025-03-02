@@ -30,7 +30,7 @@ export class AppComponent {
   selectedCategory: Category | null = null;
 
   constructor() {
-    // Создаем 4 категории, каждая с 5 продуктами
+    
     this.categories = [
       {
         name: 'Electronics',

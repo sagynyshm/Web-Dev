@@ -1,7 +1,6 @@
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 
-
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -20,6 +19,7 @@ function addCloseButtonListeners() {
     }
   }
 }
+//
 
 
 addCloseButtonListeners();
@@ -38,12 +38,12 @@ function newElement() {
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
-  document.getElementById("myUL").appendChild(li);
-
 
   
- 
- //document.getElementById("myInput").value = "";
+
+
+
+  document.getElementById("myInput").value = "";
 
   
   var span = document.createElement("SPAN");
