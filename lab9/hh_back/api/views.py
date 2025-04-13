@@ -1,40 +1,92 @@
-from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
 from .models import Company, Vacancy
 from .serializers import CompanySerializer, VacancySerializer
 
-# Endpoint: /api/companies 
-class CompanyListAPIView(generics.ListAPIView):
-    queryset = Company.objects.all()
-    serializer_class = CompanySerializer
+# Companies
 
-# Endpoint: /api/companies/<int:id>/ 
-class CompanyDetailAPIView(generics.RetrieveAPIView):
-    queryset = Company.objects.all()
-    serializer_class = CompanySerializer
-    lookup_field = 'id'
+@api_view(['GET', 'POST'])
+def company_list(request):
+    if request.method == 'GET':
+        companies = Company.objects.all()
+        serializer = CompanySerializer(companies, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = CompanySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
 
-# Endpoint: /api/companies/<int:id>/vacancies/ 
-class CompanyVacanciesAPIView(generics.ListAPIView):
-    serializer_class = VacancySerializer
+@api_view(['GET', 'PUT', 'DELETE'])
+def company_detail(request, id):
+    try:
+        company = Company.objects.get(id=id)
+    except Company.DoesNotExist:
+        return Response({'error': 'Company not found'}, status=404)
 
-    def get_queryset(self):
-        company_id = self.kwargs.get('id')
-        return Vacancy.objects.filter(company_id=company_id)
+    if request.method == 'GET':
+        serializer = CompanySerializer(company)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = CompanySerializer(company, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+    elif request.method == 'DELETE':
+        company.delete()
+        return Response({'message': 'Deleted'}, status=204)
 
-# Endpoint: /api/vacancies/
-class VacancyListAPIView(generics.ListAPIView):
-    queryset = Vacancy.objects.all()
-    serializer_class = VacancySerializer
+@api_view(['GET'])
+def company_vacancies(request, id):
+    try:
+        company = Company.objects.get(id=id)
+    except Company.DoesNotExist:
+        return Response({'error': 'Company not found'}, status=404)
 
-# Endpoint: /api/vacancies/<int:id>/
-class VacancyDetailAPIView(generics.RetrieveAPIView):
-    queryset = Vacancy.objects.all()
-    serializer_class = VacancySerializer
-    lookup_field = 'id'
+    vacancies = company.vacancies.all()
+    serializer = VacancySerializer(vacancies, many=True)
+    return Response(serializer.data)
 
-# Endpoint: /api/vacancies/top_ten/ 
-class VacancyTopTenAPIView(generics.ListAPIView):
-    serializer_class = VacancySerializer
+# Vacancies
 
-    def get_queryset(self):
-        return Vacancy.objects.order_by('-salary')[:10]
+@api_view(['GET', 'POST'])
+def vacancy_list(request):
+    if request.method == 'GET':
+        vacancies = Vacancy.objects.all()
+        serializer = VacancySerializer(vacancies, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = VacancySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def vacancy_detail(request, id):
+    try:
+        vacancy = Vacancy.objects.get(id=id)
+    except Vacancy.DoesNotExist:
+        return Response({'error': 'Vacancy not found'}, status=404)
+
+    if request.method == 'GET':
+        serializer = VacancySerializer(vacancy)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = VacancySerializer(vacancy, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
+    elif request.method == 'DELETE':
+        vacancy.delete()
+        return Response({'message': 'Deleted'}, status=204)
+
+@api_view(['GET'])
+def top_ten_vacancies(request):
+    vacancies = Vacancy.objects.order_by('-salary')[:10]
+    serializer = VacancySerializer(vacancies, many=True)
+    return Response(serializer.data)
